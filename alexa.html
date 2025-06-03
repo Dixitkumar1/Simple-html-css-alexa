@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <table width="100%" height="1%" align="center" font size "10%">
+        <tr>
+            <td bgcolor="" align="left">
+                <font color="#dddd"><img src="AI.jfif" td bgcolor="#742902" align="right">
+                    <font color="#dddd"><br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="D.K.jfif">
+
+        </tr>
+    </table>
+</head>
+
+</html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <body background="AI background.jpg">
+    </body>
+
+
+    <h1>
+        <center>
+            <FONT COLOR="red">Made By Dixit Khanda </h1>
+
+    <hr>
+
+    <script>
+        know = {
+
+            "Hello": "<center>  Hi there!",
+            "hello": "<center>  Hi there!",
+            "HELLO": "<center>  Hi there!",
+            "Who are you?": "<center> I am Dixit's Assistant",
+            "who are you?": "<center> I am Dixit's Assistant",
+            "How are you?": "<center> I am Fine",
+            "how are you?": "<center>I am Fine",
+            "How old are you?": "<center> I am infinity in age",
+            "how old are you?": "<center> I am infinity in age",
+
+
+
+
+        };
+
+        function talk() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+            recognition.onresult = function(event) {
+                // console.log(event);
+                document.getElementById('speechToText').value = event.results[0][0].transcript;
+            }
+            recognition.start();
+
+
+
+
+
+            var user = document.getElementById("userBox").value;
+            document.getElementById("userBox").value = "";
+            document.getElementById("chatLog").innerHTML += user + "<br>";
+
+            if (user in know) {
+                document.getElementById("chatLog").innerHTML += know[user] + "<br>";
+            } else
+
+            {
+                document.getElementById("chatLog").innerHTML += "I don't understand... <br>";
+            }
+        }
+    </script>
+
+
+
+
+
+
+    <body>
+
+        <h1>
+            <p id="chatLog">
+                <p>
+                    <center> - - Chat Box - - <br> </p>
+
+
+                <input id="speechToText" placeholder="Speak Something" onclick="record()" id="userBox" type="text" onkeydown="if(event.keyCode == 13) {talk()}">
+        </h1>
+
+    </body>
+
+
+
+</html>
